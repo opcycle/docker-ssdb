@@ -14,9 +14,9 @@ RUN apk add --no-cache --virtual .build-deps \
     && cp ssdb-server /opt/ssdb \
     && cp ssdb-repair /opt/ssdb \
     && cp ssdb-dump /opt/ssdb \
-    && rm -rf /ssdb \
     && apk add --virtual .rundeps libstdc++ \
-    && apk del .build-deps
+    && apk del .build-deps \
+    && rm -rf /ssdb
 
 ADD ssdb.conf /opt/ssdb/ssdb.conf
 
