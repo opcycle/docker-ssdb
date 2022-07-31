@@ -12,8 +12,8 @@ RUN apk add --no-cache --virtual .build-deps \
     && cd /ssdb/tmp \
     && make -j$(getconf _NPROCESSORS_ONLN) \
     && cp ssdb-server /opt/ssdb \
-    && cp ssdb-repair /opt/ssdb \
-    && cp ssdb-dump /opt/ssdb \
+    && cp tools/ssdb-repair /opt/ssdb \
+    && cp tools/ssdb-dump /opt/ssdb \
     && apk add --virtual .rundeps libstdc++ \
     && apk del .build-deps \
     && rm -rf /ssdb
