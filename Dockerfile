@@ -14,6 +14,8 @@ RUN apk add --no-cache --virtual .build-deps \
     && apk add --virtual .rundeps libstdc++ \
     && apk del .build-deps
 
+ADD ssdb.conf /opt/ssdb/ssdb.conf
+
 EXPOSE 16379
 VOLUME /var/ssdb
 
